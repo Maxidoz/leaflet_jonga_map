@@ -1,6 +1,5 @@
 // Initialise map
-var map = L.map('map').setView([7.0, -1.09], 7);
-
+var map = L.map('map').setView([-33.91799, 25.57007], 7);
 
  // Adding tile layer basemaps
 
