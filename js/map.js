@@ -348,8 +348,6 @@ var geojson_layers = {
     "Roads layer": roads_layer,
     "Rails layer": rails_layer,
     "ZAF Layer": SOU_boundaries_layer,
-
-    //"Roads": roadsLayer
 };
 
 var overlays = {
