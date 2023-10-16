@@ -138,7 +138,7 @@ var SOU_boundaries_layer = L.geoJson(SOU_boundaries.json, {
         //center_lat = turf.center(feature).geometry.coordinates[1].toFixed(2)
 
 
-        label = `Name: ${feature.properties.region}<br>`
+        //label = `Name: ${feature.properties.region}<br>`
         //label += `Area: ${area}<br>`
         //label += `Center: lng : ${center_lng}, lat: ${center_lat} <br>`
         
@@ -344,9 +344,6 @@ var geojson_layers = {
     "Railway layer": railway_layer,
     "airports layer": airports_layer,
     "Water-lines layer": water_lines_layer,
-    "Water-areas layer": water_areas_layer,
-    "Roads layer": roads_layer,
-    "Rails layer": rails_layer,
     "ZAF Layer": SOU_boundaries_layer,
 };
 
