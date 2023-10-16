@@ -49,6 +49,13 @@ opacity:0.3,
 weight:1,
 };
 
+//SOU_boundaries layer style
+var SOU_boundaries_style = {
+    color: "gold",
+    opacity:0.3,
+    weight:1,
+    };
+
 //health facility layer style
  var healthfacility_style = {
      radius:8,
@@ -102,6 +109,28 @@ var rail_style = {
 // Add GEOJSON layers
 var region_layer = L.geoJson(region, {
     style:region_style,
+    onEachFeature:function(feature,layer){
+
+        //area = (turf.area(feature)/1000000).toFixed(3)
+        //center_lng = turf.center(feature).geometry.coordinates[0].toFixed(2)
+        //center_lat = turf.center(feature).geometry.coordinates[1].toFixed(2)
+
+
+        label = `Name: ${feature.properties.region}<br>`
+        //label += `Area: ${area}<br>`
+        //label += `Center: lng : ${center_lng}, lat: ${center_lat} <br>`
+        
+
+
+        layer.bindPopup(label)
+    }
+
+
+})//.addTo(map); 
+
+// Add GEOJSON layers
+var SOU_boundaries_layer = L.geoJson(SOU_boundaries.json, {
+    style:SOU_boundaries_style,
     onEachFeature:function(feature,layer){
 
         //area = (turf.area(feature)/1000000).toFixed(3)
@@ -318,6 +347,7 @@ var geojson_layers = {
     "Water-areas layer": water_areas_layer,
     "Roads layer": roads_layer,
     "Rails layer": rails_layer,
+    "ZAF Layer": SOU_boundaries_layer,
 
     //"Roads": roadsLayer
 };
@@ -338,6 +368,7 @@ var overlays = {
     "Rail Lines": Railwayline_wms,
     "Tree cover": tree_cover_wms,
     "Rivers": river_wms,
+    "ZAF Layer": SOU_boundaries_layer,
 
 
     //"Roads": roadsLayer
