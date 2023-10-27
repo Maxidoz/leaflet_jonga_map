@@ -373,7 +373,7 @@ var overlays = {
 //var cities = L.layerGroup([wms_Layers, baseLayers, aurora, golden]);
 
 // Add layer control to map
-L.control.layers(baseLayers, overlays, {collapsed:false}).addTo(map);
+L.control.layers(baseLayers, overlays, {collapsed:true}).addTo(map);
 
 //adding basemaps
 //layerControl.addBaseLayer(Region_wms, "Region");
